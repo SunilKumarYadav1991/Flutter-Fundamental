@@ -10,7 +10,7 @@ void main() {
   runApp(MaterialApp(
     home: HomePage(),
     theme: ThemeData(
-      primarySwatch: Colors.purple,
+      primarySwatch: Colors.purple, /* Does not work as per tutorial */
     ),
   ));
 }
@@ -23,7 +23,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Demo App!"),
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.greenAccent,  /* Need to add color as default banner is white color */
+      ),
+      body: Container(
+        child: Text("Hello world via Flutter!"),
       ),
     );
   }
