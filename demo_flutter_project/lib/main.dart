@@ -34,11 +34,28 @@ class HomePage extends StatelessWidget {
           alignment: Alignment.bottomLeft,
           decoration: BoxDecoration(
             color: Colors.red,
-            borderRadius: BorderRadius.circular(10)
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(colors:[
+              Colors.pink, Colors.yellow
+              ]),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blueAccent,
+                blurRadius: 10,
+              )
+            ]
            ), 
-          child: Text("I'm box"),
-        ),
-      )
+          child: Text(
+            "I am a box", 
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+              fontWeight: FontWeight.bold 
+              ),
+            ),
+         )
+      ),
     );
   }
 }
