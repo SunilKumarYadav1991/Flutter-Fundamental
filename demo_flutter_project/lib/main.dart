@@ -10,7 +10,7 @@ void main() {
   runApp(MaterialApp(
     home: HomePage(),
     theme: ThemeData(
-      primarySwatch: Colors.purple, /* Does not work as per tutorial. Need to debug further */
+      primarySwatch: Colors.purple,                             /* Does not work as per tutorial. Need to debug further */
     ),
   ));
 }
@@ -23,38 +23,38 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Demo App!"),
-        backgroundColor: Colors.greenAccent,                  /* Need to add color as default banner is white color */
+        backgroundColor: Colors.greenAccent,                     /* Need to add color as default banner is white color */
       ),
-      body: Center(
-        child: Container(                                      /* Each container has either one child or multiple children*/
-          padding:const EdgeInsets.all(12) ,
-          //color: Colors.red,                                 /*Either use BoxDecoration's color or */
-          width: 100,
-          height: 100,
-          alignment: Alignment.bottomLeft,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(10),
-            gradient: LinearGradient(colors:[
-              Colors.pink, Colors.yellow
-              ]),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.blueAccent,
-                blurRadius: 10,
-              )
-            ]
-           ), 
-          child: Text(
-            "I am a box", 
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-              fontWeight: FontWeight.bold 
-              ),
+      body: Container(                                             /* body: Container() Centre will force all widgets under body in centre of screen*/
+        height: 200,                                          
+        color: Colors.cyan,
+        child: Row(                                                /* Row will hold box container widget*/
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(                                              /* Each container has either one child or multiple children*/
+              padding:const EdgeInsets.all(12) ,
+              color: Colors.red,                                  /*Either use BoxDecoration's color or this */
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
             ),
-         )
+            Container(                                              /* Each container has either one child or multiple children*/
+              padding:const EdgeInsets.all(12) ,
+              color: Colors.green,                                /*Either use BoxDecoration's color or this */
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+            ),
+            Container(                                              /* Each container has either one child or multiple children*/
+              padding:const EdgeInsets.all(12) ,
+              color: Colors.yellow,                                 /*Either use BoxDecoration's color or this */
+              width: 100,
+              height: 100,
+              alignment: Alignment.center,
+            )
+          ],
+        )
       ),
     );
   }
