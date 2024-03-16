@@ -26,12 +26,12 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.greenAccent,                     /* Need to add color as default banner is white color */
       ),
       body: Container(                                             /* body: Container() Centre will force all widgets under body in centre of screen*/
-        height: 400,
-        width: 250,                                      
+        height: 100,
+        //width: 250,                                      
         color: Colors.cyan,
-        child: Column(                                                /* Row will hold box container widgethorizontally and Column() in vertical*/
+        child: Row(                                                /* Row() will hold box container widgethorizontally and Column() in vertical*/
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.max,                           /* Inherits from parent i.e. Container() in this case*/
           children: [
             Container(                                              /* Each container has either one child or multiple children*/
