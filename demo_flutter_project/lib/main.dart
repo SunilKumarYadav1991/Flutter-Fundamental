@@ -35,22 +35,24 @@ class HomePage extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
-              child: Text("I'm a drawer"),
-              decoration: BoxDecoration(color: Colors.blueAccent),
+            UserAccountsDrawerHeader(
+              accountName: Text("Sunil Yadav"), 
+              accountEmail: Text("example@gmail.com"),
+              currentAccountPicture: Image.network("https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2VzfGVufDB8fDB8fHww"),
               ),
-              ListTile(
-                leading: Icon(Icons.person),
-                title: Text("Sunil Yadav"),
-                subtitle: Text("Sr. Tech Lead"),
-                trailing: Icon(Icons.edit),
-              ),
-              ListTile(
-                leading: Icon(Icons.email),
-                title: Text("Email"),
-                subtitle: Text("example@gmail.com"),
-                trailing: Icon(Icons.edit),
-              ),
+
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text("Sunil Yadav"),
+            subtitle: Text("Sr. Tech Lead"),
+            trailing: Icon(Icons.edit),
+            ),
+          ListTile(
+            leading: Icon(Icons.email),
+            title: Text("Email"),
+            subtitle: Text("example@gmail.com"),
+            trailing: Icon(Icons.edit),
+            ),
           ],
         ),
       ),
