@@ -31,8 +31,26 @@ class HomePage extends StatelessWidget {
           child: Card(
             child: Column(
               children: [
-                Image.asset(
-                    "assets/codingImage.jpg"), /* Using workspace image. Image.asset have many other properties */
+                Image.asset("assets/codingImage.jpg"),
+                /* Using workspace image. Image.asset have many other properties */
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Change my name",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          hintText: "Enter some text",
+                          labelText: "Name",
+                          border: OutlineInputBorder()),
+                    )),
               ],
             ),
           ),
