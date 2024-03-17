@@ -32,7 +32,20 @@ class HomePage extends StatelessWidget {
           color: Colors.cyan,        
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed:null),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Text("I'm a drawer")
+              
+              )
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed:() {},   /*onPressed is of type void Function()?. Currently its set to empty.*/
+        child: Icon(Icons.edit),
+      )
     );
   }
 }
