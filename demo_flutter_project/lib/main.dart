@@ -1,4 +1,4 @@
-// Example code to understand Container and Text
+// Material Drawer, List View, Circle Avatar, Networking, Floating Action Button
 
 //import 'package:flutter/widgets.dart';
 //import 'package:flutter/cupertino.dart';
@@ -22,42 +22,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("My Demo App!"),
+        title: Text("Chapter 3 App!"),
         backgroundColor: Colors.greenAccent,                     /* Need to add color as default banner is white color */
       ),
-      body: Container(                                             /* body: Container() Centre will force all widgets under body in centre of screen*/
-        height: 100,
-        //width: 250,                                      
-        color: Colors.cyan,
-        child: Row(                                                /* Row() will hold box container widgethorizontally and Column() in vertical*/
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisSize: MainAxisSize.max,                           /* Inherits from parent i.e. Container() in this case*/
-          children: [
-            Container(                                              /* Each container has either one child or multiple children*/
-              padding:const EdgeInsets.all(12) ,
-              color: Colors.red,                                  /*Either use BoxDecoration's color or this */
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-            ),
-            Container(                                              /* Each container has either one child or multiple children*/
-              padding:const EdgeInsets.all(12) ,
-              color: Colors.green,                                /*Either use BoxDecoration's color or this */
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-            ),
-            Container(                                              /* Each container has either one child or multiple children*/
-              padding:const EdgeInsets.all(12) ,
-              color: Colors.yellow,                                 /*Either use BoxDecoration's color or this */
-              width: 100,
-              height: 100,
-              alignment: Alignment.center,
-            )
-          ],
-        )
+      body: Center( 
+        child: Container(                                             /* body: Container() Centre will force all widgets under body in centre of screen*/
+          height: 100,
+          width: 100,                                      
+          color: Colors.cyan,        
+        ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed:null),
     );
   }
 }
