@@ -1,4 +1,8 @@
 // Material Drawer, List View, Circle Avatar, Networking, Floating Action Button
+/*
+Simple app with home page containing image and text input field.
+Left side drawer contain some header and information.
+*/
 
 //import 'package:flutter/widgets.dart';
 //import 'package:flutter/cupertino.dart';
@@ -28,30 +32,32 @@ class HomePage extends StatelessWidget {
         body: Center(
             child: Padding(
           padding: const EdgeInsets.all(15),
-          child: Card(
-            child: Column(
-              children: [
-                Image.asset("assets/codingImage.jpg"),
-                /* Using workspace image. Image.asset have many other properties */
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Change my name",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: TextField(
-                      decoration: InputDecoration(
-                          hintText: "Enter some text",
-                          labelText: "Name",
-                          border: OutlineInputBorder()),
-                    )),
-              ],
+          child: SingleChildScrollView(
+            child: Card(
+              child: Column(
+                children: [
+                  Image.asset("assets/codingImage.jpg"),
+                  /* Using workspace image. Image.asset have many other properties */
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    "Change my name",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Enter some text",
+                            labelText: "Name",
+                            border: OutlineInputBorder()),
+                      )),
+                ],
+              ),
             ),
           ),
         )),
@@ -84,7 +90,7 @@ class HomePage extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           /*onPressed is of type void Function()?. Currently its set to empty.*/
-          child: Icon(Icons.edit),
+          child: Icon(Icons.send),
         ));
   }
 }
