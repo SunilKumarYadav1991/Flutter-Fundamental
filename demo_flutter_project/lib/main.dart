@@ -36,9 +36,21 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             DrawerHeader(
-              child: Text("I'm a drawer")
-              
-              )
+              child: Text("I'm a drawer"),
+              decoration: BoxDecoration(color: Colors.blueAccent),
+              ),
+              ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Sunil Yadav"),
+                subtitle: Text("Sr. Tech Lead"),
+                trailing: Icon(Icons.edit),
+              ),
+              ListTile(
+                leading: Icon(Icons.email),
+                title: Text("Email"),
+                subtitle: Text("example@gmail.com"),
+                trailing: Icon(Icons.edit),
+              ),
           ],
         ),
       ),
