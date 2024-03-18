@@ -2,6 +2,9 @@
 /*
 Simple app with home page containing image and text input field.
 Left side drawer contain some header and information.
+
+StatelessWidget: Used when state does not change
+StatefullWidget: used when state change. e.g. text box input keep changing
 */
 
 //import 'package:flutter/widgets.dart';
@@ -18,9 +21,21 @@ void main() {
   ));
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var myText = "Change My Text";
+  TextEditingController _nameController =
+      TextEditingController(); /*A controller for an editable text field.
+                                 Whenever the user modifies a text field with an associated [TextEditingController], 
+                                 the text field updates [value] and the controller notifies its listeners. 
+                                 Listeners can then read the [text] and [selection] properties to learn 
+                                 what the user has typed or how the selection has been updated. */
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +57,7 @@ class HomePage extends StatelessWidget {
                     height: 20,
                   ),
                   Text(
-                    "Change my name",
+                    myText,
                     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
@@ -51,6 +66,7 @@ class HomePage extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.all(15),
                       child: TextField(
+                        controller: _nameController,
                         decoration: InputDecoration(
                             hintText: "Enter some text",
                             labelText: "Name",
@@ -88,7 +104,12 @@ class HomePage extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            myText = _nameController.text;
+
+            setState(
+                () {}); /* Used to change state once action is perfromed by send button press*/
+          },
           /*onPressed is of type void Function()?. Currently its set to empty.*/
           child: Icon(Icons.send),
         ));
